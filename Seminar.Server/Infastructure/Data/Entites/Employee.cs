@@ -1,0 +1,29 @@
+﻿using Seminar.Share;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Seminar.Server.Infastructure.Entites
+{
+    public class Employee
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+        public Sex Sex { get; set; }
+        public DateTime Birthday { get; set; } 
+        public long Salary { get; set; }
+        public ICollection<House> Houses { get; set; }
+
+        [ForeignKey("Account")]
+        public Account Account { get; set; }
+        public string Username { get; set; }
+
+        [ForeignKey("Branch")]
+        public Branch Branch { get; set; }
+        public Guid BranchId { get; set; }
+    }
+}
