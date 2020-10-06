@@ -6,14 +6,14 @@ namespace Seminar.Server.Infastructure.Entites
 {
     public class History
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
+
         public Guid CustomerId { get; set; }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Customer Customer { get; set; }
+
         public Guid HouseId { get; set; }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public House House { get; set; }
+
         public DateTime ViewDate { get; set; }
         public string Comment { get; set; }
     }

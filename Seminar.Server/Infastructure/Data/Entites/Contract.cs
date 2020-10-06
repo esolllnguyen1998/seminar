@@ -1,16 +1,18 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Seminar.Server.Infastructure.Entites
 {
     public class Contract
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
+
         public Guid HouseId { get; set; }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public House House { get; set; }
+
         public Guid CustomerId { get; set; }
+        public Customer Customer { get; set; }
+
+        public string Pirce { get; set; }
+        public DateTime BorrowDate { get; set; }
     }
 }
