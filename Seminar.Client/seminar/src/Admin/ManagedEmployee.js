@@ -15,7 +15,7 @@ class ManagedEmployee extends Component {
     render() {
         return (
             <>
-                {true ? <CreateEmployee /> : <></>}
+                <CreateEmployee isShowCreateModal={this.state.isShowCreateModal} onShowCreateModal={() => this.onShowCreateModal()} />
                 <div className="row" style={{ paddingTop: "3px", backgroundColor: "white" }}>
                     <div className="col" style={{ textAlign: "left", marginLeft: "2%" }}>
                         <p class="font-weight-light-bold" style={{ fontSize: "25px" }}>Managed Employees</p>
@@ -45,8 +45,9 @@ class ManagedEmployee extends Component {
     }
 
     onShowCreateModal() {
+        var isShow = this.state.isShowCreateModal;
         this.setState({
-            isShowCreateModal: true
+            isShowCreateModal: !isShow
         })
     }
 

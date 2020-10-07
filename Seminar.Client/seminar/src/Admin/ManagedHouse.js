@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Pagination from '../Components/Pagination';
 
-class ManagedBranch extends Component {
+class ManagedHouse extends Component {
 
     constructor() {
         super();
@@ -12,7 +12,7 @@ class ManagedBranch extends Component {
             <>
                 <div className="row" style={{ paddingTop: "3px", backgroundColor: "white" }}>
                     <div className="col" style={{ textAlign: "left", marginLeft: "2%" }}>
-                        <p class="font-weight-light-bold" style={{ fontSize: "25px" }}>Managed Branch</p>
+                        <p class="font-weight-light-bold" style={{ fontSize: "25px" }}>Managed House</p>
                     </div>
                     <div className="col">
                         <div className="input-group" style={{ width: "97%" }}>
@@ -64,4 +64,4 @@ class ManagedBranch extends Component {
     }
 }
 
-export default ManagedBranch;
+export default ManagedHouse;

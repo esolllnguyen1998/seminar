@@ -5,6 +5,7 @@ import './App.css';
 import AdminHomePage from './Admin/AdminHomePage';
 import ManagedEmployee from './Admin/ManagedEmployee';
 import ManagedBranch from './Admin/ManagedBranch';
+import ManagedHouse from './Admin/ManagedHouse';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -25,6 +26,7 @@ class App extends Component {
           <Route path='/admin' exact={true} component={AdminHomePage} />
           <Route path='/admin/employee' exact={true} component={ManagedEmployee} />
           <Route path='/admin/branch' exact={true} component={ManagedBranch} />
+          <Route path='/admin/house' exact={true} component={ManagedHouse} />
         </Router>
       </div >
     );
