@@ -54,6 +54,12 @@ class CreateEmployee extends Component {
                             <Label>Salary</Label>
                             <Input type="text" placeholder="Enter Slary" />
                         </FormGroup>
+                        <FormGroup>
+                            <Label>Account</Label>
+                            <Input type="text" placeholder="Enter Username" />
+                            <br></br>
+                            <Input type="text" placeholder="Enter Password" />
+                        </FormGroup>
                     </Form>
                 </ModalBody>
                 <ModalFooter>

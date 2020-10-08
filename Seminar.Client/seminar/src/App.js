@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import './App.css';
 
 import AdminHomePage from './Admin/AdminHomePage';
-import ManagedEmployee from './Admin/ManagedEmployee';
-import ManagedBranch from './Admin/ManagedBranch';
-import ManagedHouse from './Admin/ManagedHouse';
+import ManagedEmployee from './Admin/employee/ManagedEmployee';
+import ManagedBranch from './Admin/branch/ManagedBranch';
+import ManagedHouse from './Admin/house/ManagedHouse';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';

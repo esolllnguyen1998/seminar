@@ -4,6 +4,11 @@
   height: 99vh;
 }
 
+.card :hover {
+  cursor: pointer;
+  background-color: #CCFFCC;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

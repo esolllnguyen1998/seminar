@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import Pagination from '../Components/Pagination';
+import CreateEmployee from './CreateEmployee';
 
-class ManagedHouse extends Component {
+class ManagedEmployee extends Component {
 
     constructor() {
         super();
+
+        this.state = {
+            isShowCreateModal: false
+        }
     }
 
     render() {
         return (
             <>
+                <CreateEmployee isShowCreateModal={this.state.isShowCreateModal} onShowCreateModal={() => this.onShowCreateModal()} />
                 <div className="row" style={{ paddingTop: "3px", backgroundColor: "white" }}>
                     <div className="col" style={{ textAlign: "left", marginLeft: "2%" }}>
-                        <p class="font-weight-light-bold" style={{ fontSize: "25px" }}>Managed House</p>
+                        <p class="font-weight-light-bold" style={{ fontSize: "25px" }}>Managed Employees</p>
+                    </div>
+
+                </div>
+                <div className="row" style={{ paddingTop: "3px", backgroundColor: "white" }}>
+                    <div className="col" style={{ textAlign: "left", marginLeft: "2%", marginBottom: "1%" }}>
+                        <button type="button" class="btn btn-success" style={{ width: "20%" }} onClick={() => this.onShowCreateModal()}>Add New Employee</button>
                     </div>
                     <div className="col">
                         <div className="input-group" style={{ width: "97%" }}>
@@ -23,22 +34,19 @@ class ManagedHouse extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="row" style={{ paddingTop: "3px", backgroundColor: "white" }}>
-                    <div className="col" style={{ textAlign: "left", marginLeft: "2%" }}>
-                        <button type="button" class="btn btn-success" style={{ width: "15%" }} >Create</button>
-                    </div>
-                    <div className="col">
-                        <div style={{ justifyContent: "right", display: "contents" }}>
-                            <Pagination />
-                        </div>
-                    </div>
-                </div>
-                {this.renderListBranch()}
+                {this.renderEmployeeList()}
             </>
         )
     }
 
-    renderListBranch() {
+    onShowCreateModal() {
+        var isShow = this.state.isShowCreateModal;
+        this.setState({
+            isShowCreateModal: !isShow
+        })
+    }
+
+    renderEmployeeList() {
         var elements = [];
         var i = 0;
         while (i < 10) {
@@ -48,7 +56,7 @@ class ManagedHouse extends Component {
                         <img className="card-img-top" src="https://i.imgur.com/BRmMSN6.jpg" alt="Card image cap" style={{ height: "25vh" }} />
                         <div className="card-body">
                             <h5 className="card-title">Natasha Romanoff</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p className="card-text"></p>
                         </div>
                     </div>
                 </div>
@@ -57,11 +65,11 @@ class ManagedHouse extends Component {
         }
 
         return (
-            <div class="d-flex flex-wrap">
+            <div class="d-flex flex-wrap" style={{ overflowY: "scroll", height: "83%" }}>
                 {elements}
             </div>
         )
     }
 }
 
-export default ManagedHouse;
+export default ManagedEmployee;
